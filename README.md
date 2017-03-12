@@ -1,2 +1,2 @@
 # On-The-Media
-A very coarse study on modern mainstream media trends in 2017.
+A very coarse study of modern mainstream media trends.
