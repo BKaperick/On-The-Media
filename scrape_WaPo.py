@@ -45,6 +45,8 @@ def name_from_url(url):
     url_data = url.split('.com/')[1]
     url_data = url_data.split('/')
     for i,chunk in enumerate(url_data):
+        
+        # If chunk, url_data[i+1], url_data[i+2] are the date in YYYY/MM/DD format
         if len(chunk) == 4 and len(url_data[i+1]) == 2 and len(url_data[i+2]) == 2:
             if '.html' in url_data[i+3]:
                 name = url_data[i-1]
@@ -86,6 +88,12 @@ for url in article_urls:
     
     # Update information
     name = name_from_url(url)
+
+    # Skip if invalid url
+    if not name:
+        continue
+
+    # Update information
     network[name] = suggested
     visited.add(name)
     
