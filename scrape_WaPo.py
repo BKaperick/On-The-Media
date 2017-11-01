@@ -59,8 +59,11 @@ def name_from_url(url):
 refresh = len(sys.argv) > 1 #sys.argv[1][:2] == '-r'
 
 if refresh:
+    
+    APIKEY = open('apikey.txt', 'r').readline().strip()
+    
     # Get list of articles currently on the front page.
-    r = requests.get('https://newsapi.org/v1/articles?source=the-washington-post&sortBy=top&apiKey=bf235085e456486c962c8afc4b59cd6e')
+    r = requests.get('https://newsapi.org/v1/articles?source=the-washington-post&sortBy=top&apiKey=' + APIKEY)
     success = str(r.status_code)
     if success != '200':
         raise Exception('error code ' + success)
@@ -77,6 +80,7 @@ else:
     visited = pickle.load(open('visited.pkl','rb'))
     network = pickle.load(open('adj_list.pkl','rb'))
     article_urls = pickle.load(open('queue.pkl','rb'))
+    print(visited)
 
 counter = 0
 
