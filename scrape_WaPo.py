@@ -111,7 +111,7 @@ for url in article_urls:
     
     # Periodically save state of scraping
     counter += 1
-    print(counter)
+    print(counter, name)
     if counter % 10 == 0:
         pickle.dump(visited, open('visited.pkl','wb'))
         pickle.dump(article_urls, open('queue.pkl','wb'))
