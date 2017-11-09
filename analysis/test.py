@@ -35,16 +35,16 @@ print("{0} is to {1} as {2} is to ...".format(neg[0], pos[0], pos[1]))
 print(model.generate_response(*leader))
 
 
-#while True:
-#    print("\n")
-#    word = input()
-#    try:
-#        print(model.cosine(word))
-#        indexes, metrics = model.cosine(word)
-#        #model.vocab[indexes]
-#        print(model.generate_response(indexes, metrics).tolist())
-#        for word,dist,size in model.generate_response(indexes, metrics).tolist():
-#            print(word,dist,size)
-#
-#    except KeyError:
-#        pass
+while True:
+    print("\n")
+    word = input()
+    try:
+        print(model.cosine(word))
+        indexes, metrics = model.cosine(word)
+        #model.vocab[indexes]
+        print(model.generate_response(indexes, metrics).tolist())
+        for word,dist,size in model.generate_response(indexes, metrics).tolist():
+            print(word,dist,size)
+
+    except KeyError:
+        pass

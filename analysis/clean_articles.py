@@ -31,3 +31,6 @@ def clean():
     with open('articles_used.txt', 'a') as history_file:
         for article in used_update:
             history_file.write(article + '\n')
+
+if __name__ == '__main__':
+    clean()
